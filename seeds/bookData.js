@@ -2,9 +2,9 @@ const { Book } = require('../models');
 
 // dummy data
 const bookData = [
-    {title: 'Book 1', author:'Author 1'},
-    {title: 'Book 2', author:'Author 2'},
-    {title: 'Book 3', author:'Author 3'},
+    {title: 'It Starts with Us: A Novel', author:'Colleen Hoover', cover: '', summary: 'Test Summary'},
+    {title: 'Lore Olympus: Volume Three (B&N Exclusive Edition)', author:'Rachel Smythe', cover: '', summary: 'Test Summary'},
+    {title: 'Sell Yourself: How to Create, Live, and Sell a Powerful Personal Brand', author:'Cindy McGovern', cover: '', summary: `Test Summary`},
 ];
 
 const seedBooks = () => Book.bulkCreate(bookData);
