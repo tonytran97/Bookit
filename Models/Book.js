@@ -19,10 +19,10 @@ Book.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        rating: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+        // rating: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
     },
     {
         sequelize,

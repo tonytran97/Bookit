@@ -11,14 +11,6 @@ Review.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        author: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         date_posted: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -29,7 +21,7 @@ Review.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [500]
+                len: [3]
             }
         },
     },
