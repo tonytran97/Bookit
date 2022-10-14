@@ -8,11 +8,30 @@ router.get('/', async (req, res) => {
     });
     const books = bookData.map((book) => book.get({ plain: true }));
     // console.log(books);
-    res.render('homepage', { books });
+    res.render('homepage', { 
+        books,
+        loggedIn: req.session.loggedIn, 
+    });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
+});
+
+router.get('/login', async (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect(`/`);
+        return;
+    }
+    res.render('login');
+});
+
+router.get('/signup', async (req, res) => {
+    if (req.session.loggedIn){
+        res.redirect(`/`);
+        return;
+    }
+    res.render('signup');
 });
 
 module.exports = router;
