@@ -25,7 +25,7 @@ Book.hasMany(Review, {
     onDelete: 'CASCADE'
 });
 
-Review.belongsTo(Book {
+Review.belongsTo(Book, {
     foreignKey: 'user_id'
 });
 
