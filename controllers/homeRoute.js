@@ -6,12 +6,12 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
     const bookData = await Book.findAll({
-        include: [
-            {
-                model: User, 
-                attributes: ['username'],
-            },
-        ],
+        // include: [
+        //     {
+        //         model: User, 
+        //         attributes: ['username'],
+        //     },
+        // ],
     }).catch((err) => {
         res.json(err);
     });
@@ -45,6 +45,10 @@ router.get('/signup', async (req, res) => {
 
 router.get(`/newread`, withAuth, (req, res) => {
     res.render(`newread`);
+});
+
+router.get(`/reviews`, (req, res) => {
+    res.render(`reviews`);
 });
 
 module.exports = router;
