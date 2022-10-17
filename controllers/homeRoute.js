@@ -1,9 +1,18 @@
 const router = require('express').Router();
 const Book = require('../models/Book');
+const User = require('../models/Users');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-    const bookData = await Book.findAll().catch((err) => {
+    const bookData = await Book.findAll({
+        include: [
+            {
+                model: User, 
+                attributes: ['username'],
+            },
+        ],
+    }).catch((err) => {
         res.json(err);
     });
     const books = bookData.map((book) => book.get({ plain: true }));
@@ -34,7 +43,7 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
-router.get(`/newread`, (req, res) => {
+router.get(`/newread`, withAuth, (req, res) => {
     res.render(`newread`);
 });
 
