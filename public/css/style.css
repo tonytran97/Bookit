@@ -1,0 +1,23 @@
+.navbar-custom {
+    background-color: #2C4870;
+}
+
+.nav-link, .navbar-brand {
+    color: aliceblue;
+}
+
+.card-custom {
+    background-color: #d3c1b4;
+}
+
+body {
+    background-color: #c9b594;
+}
+
+button {
+    display: block;
+    margin: auto;
+    width: 150px;
+    background-color: #2C4870;
+    color: aliceblue;
+}
