@@ -15,56 +15,28 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="/login">Login</a>
-        </div>
-      </div>
-    </nav>
-    <h1 class="text-center">Bookit</h1>
-    <div
-      class="card mb-3 text-bg-dark text-center mx-auto"
-      style="max-width: 540px"
-    >
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://i0.wp.com/suntrustblog.com/wp-content/uploads/2021/05/books_1200_pexels-1.jpg?fit=1200%2C667&ssl=1"
-            class="img-fluid rounded-start"
-            alt="image of books"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Username</label
-              >
-              <input
-                type="username"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="enter username here"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="enter password here"
-              />
-              <a href="#" class="btn btn-secondary">Sign In</a>
-              <a href="#" class="btn btn-secondary">Create New User</a>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="card mb-3 mx-auto my-5 card-custom" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://timewalkerauthor.files.wordpress.com/2017/10/books-snoo.png?w=584" class="img-fluid rounded" alt="reddit guy reading book">
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+<form>
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password">
+  </div>
+  <button type="sign-in" class="btn btn-primary">Sign In</button>
+</form>
+      </div>
+    <p>Don't have an account? <a href="/signup">Sign Up Here</a></p>  
+    </div>
+  </div>
+</div>
   </body>
 </html>

@@ -10,6 +10,10 @@
     background-color: #d3c1b4;
 }
 
+.img-fluid {
+    margin-top: 3rem;
+}
+
 body {
     background-color: #c9b594;
 }
