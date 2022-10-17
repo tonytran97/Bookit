@@ -1,9 +1,45 @@
+ Database
+const { Model, DataTypes } = require('sequelize');
+=======
 const {Model, DataTypes} = require('sequelize');
+main
 const sequelize = require('../config/connection');
 
 class Book extends Model {}
 
 Book.init(
+ Database
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    ISBN: {
+      type: DataTypes.STRING,
+    },
+    VOTES: {
+      type: DataTypes.INTEGERm
+    }
+      },
+
+{
+          sequelize,
+          timestamps: false,
+          freezeTableName: true,
+          underscored: true,
+          modelName: 'book',
+    },
+);
+
+
+module.exports = Book;
+
     {
         id: {
             type: DataTypes.INTEGER,
@@ -51,3 +87,4 @@ module.exports = Book;
 // rating
 // id
 // isbn number??
+ main
