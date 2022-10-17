@@ -18,6 +18,14 @@
     margin-left: 5rem;
 }
 
+.create-btn {
+    margin-left: 35%;
+}
+
+.img-create {
+    margin-top: 3.5rem;
+}
+
 body {
     background-color: #c9b594;
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReadIt</title>
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1 class="text-center mt-5">Fill out the information below to add a new book</h1>
+<div class="card mb-3 mx-auto my-5 card-custom" style="max-width: 1000px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://timewalkerauthor.files.wordpress.com/2017/10/books-snoo.png?w=584" class="img-fluid rounded img-create" alt="reddit guy reading book">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+<form>
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title">
+  </div>
+  <div class="mb-3">
+    <label for="author" class="form-label">Author</label>
+    <input type="text" class="form-control" id="author">
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">URL link to image of the book cover</label>
+    <input type="text" class="form-control" id="image">
+  </div>
+  <div class="mb-3">
+    <label for="summary" class="form-label">Brief Summary</label>
+    <input type="text" class="form-control" id="summary">
+  </div>
+  <button type="add-book" class="btn btn-primary create-btn">Add Book</button>
+</form>
+      </div> 
+    </div>
+  </div>
+</div>
+  </body>
+</html>
