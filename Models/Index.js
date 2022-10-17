@@ -1,8 +1,3 @@
- Database
-const User = require('./User');
-
-module.exports = { User };
-=======
 const User = require('./Users');
 const Review = require('./Review');
 const Book = require('./Book');
@@ -35,4 +30,3 @@ Review.belongsTo(Book, {
 });
 
 module.exports = { User, Review, Book }
- main
