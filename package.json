@@ -6,17 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-<<<<<<< Updated upstream
+ Updated upstream
     "start:dev": "nodemon server",
+ Database
     "seed": "node seeds/index.js"
 =======
     "seed": "node seeds/seed.js"
->>>>>>> Stashed changes
+ Stashed changes
+=======
+    "seed": "node seeds/seed.js"
+main
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+ Database
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
@@ -25,5 +30,19 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
+
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+main
   }
 }

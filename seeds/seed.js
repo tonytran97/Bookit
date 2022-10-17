@@ -1,35 +1,52 @@
 const sequelize = require('../config/connection');
-<<<<<<< Updated upstream
+Database
+ Updated upstream
 const { User, Book, Review } = require('../model');
 
 const userData = require('./userData');
 const bookData = require('./bookData');
 const reviewData = require('./reviewData');
-=======
+
 const { User } = require('../models');
 
 const userData = require('./userData.json');
->>>>>>> Stashed changes
+ Stashed changes
 
-const seedDatabase = async () => {
+
+const seedUsers = require('./userData');
+const seedBlogs = require('./bookData');
+const seedReviews = require('./reviewData');
+ main
+
+const seedAll = async () => {
   await sequelize.sync({ force: true });
 
+ Database
   await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
-<<<<<<< Updated upstream
+ Updated upstream
   await Review.bulkCreate(reviewData);
 
   await Book.bulkCreate(bookData);
 =======
->>>>>>> Stashed changes
+ Stashed changes
+
+  await seedUsers();
+  await seedBlogs(); 
+  await seedReviews();
+ main
 
   process.exit(0);
 };
 
-<<<<<<< Updated upstream
+ Database
+ Updated upstream
 seedDatabase();
 =======
 seedDatabase();
->>>>>>> Stashed changes
+ Stashed changes
+=======
+seedAll();
+ main
