@@ -1,6 +1,6 @@
 const router = require(`express`).Router();
-const { Review } = require(`../Models/Review`);
-const withAuth = require(`../utils/auth`);
+const { Review } = require('../../models/Review');
+const withAuth = require(`../../utils/auth`);
 
 router.post(`/:id`, withAuth, (req, res) => {
     Review.create({
