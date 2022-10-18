@@ -6,20 +6,23 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
     const bookData = await Book.findAll({
-            include: [
-                {
-                    model: User, 
-                    attributes: ['username'],
-                },
-            ],
+            // include: [
+            //     {
+            //         model: User, 
+            //         attributes: ['username'],
+            //     },
+            // ],
     }).catch((err) => {
         res.json(err);
     });
     const books = bookData.map((book) => book.get({ plain: true }));
-    console.log(books);
+    // console.log(books);
+    console.log(req.session);
+    // console.log(req.session.loggedIn);
     res.render('homepage', { 
         books,
         loggedIn: req.session.loggedIn, 
+        user: req.session.user,
     });
     } catch (err) {
         console.log(err);
@@ -45,11 +48,17 @@ router.get('/signup', async (req, res) => {
 
 // withAuth not working here, will need to put back in
 router.get(`/newread`, (req, res) => {
-    res.render(`newread`);
+    res.render(`newread`, {
+        loggedIn: req.session.loggedIn, 
+        user: req.session.user,
+    });
 });
 
 router.get(`/reviews`, (req, res) => {
-    res.render(`reviews`);
+    res.render(`reviews`, {
+        loggedIn: req.session.loggedIn, 
+        user: req.session.user,
+    });
 });
 
 module.exports = router;

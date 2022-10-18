@@ -22,9 +22,9 @@ console.log(dbUserData);
 
 // login
 router.post('/login', async (req, res) => {
-  console.log('test');
-  console.log(req.body);
-  console.log(req.body.username);
+  // console.log('test');
+  // console.log(req.body);
+  // console.log(req.body.username);
     try {
       const userData = await User.findOne({ where: { username: req.body.username } });
       console.log(userData);
@@ -32,24 +32,25 @@ router.post('/login', async (req, res) => {
         console.log('user error')
         res
           .status(400)
-          .json({ message: 'user' });
+          .json({ message: 'Incorrect username or password, please try again' });
         return;
       }
   
       const validPassword = await userData.checkPassword(req.body.password);
       console.log(validPassword);
       if (!validPassword) {
-        console.log('pass error');
+        console.log('password error');
         res
           .status(400)
-          .json({ message: 'pass' });
+          .json({ message: 'Incorrect username or password, please try again' });
         return;
       }
-  console.log('test 3');
+
       req.session.save(() => {
         req.session.loggedIn = true;
         // saves the user_id which can be used to load up the dashboard later
         req.session.user_id = userData.id;
+        req.session.user = req.body.username;
         
         res.json({ user: userData, message: 'You are now logged in!' });
         console.log(req.session.logged_in);

@@ -37,3 +37,8 @@ button {
     background-color: #2C4870;
     color: aliceblue;
 }
+
+button#logout {
+    width: auto;
+    margin-left: 16px;
+}
