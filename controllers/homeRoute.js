@@ -6,12 +6,12 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
     const bookData = await Book.findAll({
-        include: [
-            {
-                model: User, 
-                attributes: ['username'],
-            },
-        ],
+            include: [
+                {
+                    model: User, 
+                    attributes: ['username'],
+                },
+            ],
     }).catch((err) => {
         res.json(err);
     });
@@ -43,7 +43,8 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
-router.get(`/newread`, withAuth, (req, res) => {
+// withAuth not working here, will need to put back in
+router.get(`/newread`, (req, res) => {
     res.render(`newread`);
 });
 
