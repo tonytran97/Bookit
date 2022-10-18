@@ -47,12 +47,12 @@ router.post('/login', async (req, res) => {
       }
   console.log('test 3');
       req.session.save(() => {
-        req.session.logged_in = true;
+        req.session.loggedIn = true;
         // saves the user_id which can be used to load up the dashboard later
         req.session.user_id = userData.id;
         
         res.json({ user: userData, message: 'You are now logged in!' });
-        console.log(req.session);
+        console.log(req.session.logged_in);
       });
   
     } catch (err) {
@@ -62,10 +62,11 @@ router.post('/login', async (req, res) => {
   });
 
 router.post('/logout', (req, res) => {
-    if (req.session.LoggedIn) {
+    if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         });
+        console.log("You have been logged out");
     } else {
         res.status(404).end();
     }

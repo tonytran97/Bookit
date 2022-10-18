@@ -6,17 +6,17 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
     const bookData = await Book.findAll({
-        // include: [
-        //     {
-        //         model: User, 
-        //         attributes: ['username'],
-        //     },
-        // ],
+        include: [
+            {
+                model: User, 
+                attributes: ['username'],
+            },
+        ],
     }).catch((err) => {
         res.json(err);
     });
     const books = bookData.map((book) => book.get({ plain: true }));
-    // console.log(books);
+    console.log(books);
     res.render('homepage', { 
         books,
         loggedIn: req.session.loggedIn, 
