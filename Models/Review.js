@@ -15,7 +15,6 @@ Review.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
-
         },
         content: {
             type: DataTypes.STRING,
