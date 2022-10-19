@@ -42,3 +42,7 @@ button#logout {
     width: auto;
     margin-left: 16px;
 }
+
+.error {
+    margin-top: 20vh;
+}

@@ -68,5 +68,12 @@ router.get(`/newreview`, (req, res) => {
     });
   });
   
+router.get(`/404`, (req, res) => {
+    res.render(`404`, {
+        loggedIn: req.session.loggedIn, 
+        user: req.session.user,
+    });
+    res.status(404);
+});
 
 module.exports = router;
