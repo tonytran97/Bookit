@@ -1,6 +1,28 @@
 const router = require(`express`).Router();
 const { Review } = require('../../models');
+const Book = require('../../models/Book');
 const withAuth = require(`../../utils/auth`);
+
+router.get('/:id', async (req, res) => {
+  try {
+    const bookData = await Book.findByPk(req.params.id)
+    .catch((err) => {
+        res.json(err);
+    });
+    const book = bookData.get({ plain: true });
+    console.log(book);
+    // console.log(req.session);
+    // console.log(req.session.loggedIn);
+    res.render('reviews', { 
+        book,
+        loggedIn: req.session.loggedIn, 
+        user: req.session.user,
+    });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 router.post(`/:id`, withAuth, (req, res) => {
     Review.create({

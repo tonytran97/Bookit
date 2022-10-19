@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
         res.json(err);
     });
     const books = bookData.map((book) => book.get({ plain: true }));
-    // console.log(books);
+    console.log(books);
     console.log(req.session);
     // console.log(req.session.loggedIn);
     res.render('homepage', { 
