@@ -19,9 +19,23 @@ Review.init(
         content: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [3]
-            }
+            // validate: {
+            //     len: [3]
+            // }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user', 
+                key: 'id',
+            },
+        },
+        book_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model: 'book', 
+                key: 'id',
+            },
         },
     },
     {

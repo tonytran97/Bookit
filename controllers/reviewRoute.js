@@ -5,7 +5,16 @@ const withAuth = require(`../utils/auth`);
 
 router.get('/:id', async (req, res) => {
   try {
-    const bookData = await Book.findByPk(req.params.id)
+    const bookData = await Book.findByPk(req.params.id, {
+      include: [
+        {
+          model: Review, 
+          attributes: [
+            'id', 'date_posted', 'content', 'user_id', 'book_id',
+          ],
+        },
+      ],
+    })
     .catch((err) => {
         res.json(err);
     });

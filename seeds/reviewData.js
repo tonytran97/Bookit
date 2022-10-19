@@ -2,9 +2,9 @@ const { Review } = require('../models');
 
 // dummy data
 const reviewData = [
-   {content:'dummy content 1'},
-   {content:'dummy content 2'},
-   {content:'dummy content 3'},
+   {content:'dummy content 1', user_id: 1, book_id: 1},
+   {content:'dummy content 2', user_id: 2, book_id: 2},
+   {content:'dummy content 3', user_id: 3, book_id: 3},
 ];
 
 
