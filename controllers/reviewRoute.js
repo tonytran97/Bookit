@@ -41,17 +41,17 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post(`/:id`, withAuth, (req, res) => {
-    Review.create({
-        comment_text: req.body.comment_text,
-        post_id: req.body.post_id,
-        user_id: req.session.user_id
-    })
-    .then((reviewData) => res.json(reviewData))
-    .catch((err) => {
-        res.status(400).json(err);
-    });
-});
+// router.post(`/:id`, withAuth, (req, res) => {
+//     Review.create({
+//         comment_text: req.body.comment_text,
+//         post_id: req.body.post_id,
+//         user_id: req.session.user_id
+//     })
+//     .then((reviewData) => res.json(reviewData))
+//     .catch((err) => {
+//         res.status(400).json(err);
+//     });
+// });
 
 router.delete(`/:id`, (req, res) => {
     Review.destroy({

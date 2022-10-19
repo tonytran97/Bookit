@@ -3,8 +3,9 @@ const { Review } = require('../../models');
 const withAuth = require(`../../utils/auth`);
 
 // CREATE new review
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     console.log(req.body.review);
+    // console.log('request to post review received');
     try {
       const dbReviewData = await Review.create({
         content: req.body.review,
