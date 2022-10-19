@@ -46,3 +46,12 @@ button#logout {
 .error {
     margin-top: 20vh;
 }
+
+summary {
+    font-size: large;
+    font-weight:400;
+}
+
+.form-control-lg {
+    height: 20vh;
+}

@@ -1,6 +1,7 @@
 const router = require(`express`).Router();
 const { Review } = require('../models');
 const Book = require('../models/Book');
+const User = require('../models/Users');
 const withAuth = require(`../utils/auth`);
 
 router.get('/:id', async (req, res) => {
@@ -8,7 +9,7 @@ router.get('/:id', async (req, res) => {
     const bookData = await Book.findByPk(req.params.id, {
       include: [
         {
-          model: Review, 
+          model: Review,
           attributes: [
             'id', 'date_posted', 'content', 'user_id', 'book_id',
           ],
@@ -24,7 +25,7 @@ router.get('/:id', async (req, res) => {
     });
 
     const book = bookData.get({ plain: true });
-    // console.log(book);
+    console.log(book);
     // console.log(book.reviews);
 
     // console.log(req.session);

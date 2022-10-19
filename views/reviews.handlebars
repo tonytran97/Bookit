@@ -17,24 +17,13 @@
     </div>
   </div>
 </div>
-{{!-- change book to review later --}}
 {{#each book.reviews}}
 {{> review-posts}}
-{{/each}}
-
-  </div>
-</div>
-{{!-- <div class="card mt-3 mx-auto card-custom" style="max-width: 540px;">
+{{else}}
+<div class="card mt-3 mx-auto card-custom" style="max-width: 540px;">
       <div class="card-body">
-        <details>
-  <summary class="card-title">Review 1</summary>
-  <h5 class="card-title text-center">User: {{book.reviews.[0].user_id}}</h5>
-  <h6 class="card-title text-center">{{format_date book.reviews.[0].date_posted}}</h6>
-  <p class="card-title text-center">{{book.reviews.[0].content}}</p>
-</details>
+  <h5 class="card-title text-center">No current reviews, be the first to add one</h5>
       </div>
-    </div> --}}
-  </div>
-</div>
-
+    </div>
+{{/each}}
 <script src="/js/newreview.js"></script>

@@ -2,8 +2,12 @@
       <div class="card-body">
         <details>
   <summary class="card-title">Review</summary>
-  <h5 class="card-title text-center">User: {{user_id}}</h5>
-  <h6 class="card-title text-center">{{format_date date_posted}}</h6>
+  <div class="d-flex justify-content-between ">
+    <h6 class="card-title">User: {{user_id}}</h6>
+    <h6 class="card-title">Posted on: {{format_date date_posted}}</h6>
+    </div>
+
+  
   <p class="card-title text-center">{{content}}</p>
 </details>
       </div>
