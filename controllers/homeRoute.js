@@ -61,4 +61,12 @@ router.get(`/newread`, (req, res) => {
 //     });
 // });
 
+router.get(`/newreview`, (req, res) => {
+    res.render(`newreview`, {
+        loggedIn: req.session.loggedIn, 
+        user: req.session.user,
+    });
+  });
+  
+
 module.exports = router;

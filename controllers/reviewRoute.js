@@ -18,6 +18,9 @@ router.get('/:id', async (req, res) => {
     .catch((err) => {
         res.json(err);
     });
+    req.session.save(() => {
+      req.session.book_id = req.params.id;
+    });
     const book = bookData.get({ plain: true });
     console.log(book);
     // console.log(req.session);
