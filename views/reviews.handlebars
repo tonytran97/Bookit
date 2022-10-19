@@ -12,20 +12,19 @@
         <h5 class="card-title text-center">{{book.title}}</h5>
         <h6 class="card-title text-center">Author: {{book.author}}</h6>
         <p class="card-text text-center">{{book.summary}}</p>
-        {{!-- <button href="/newreview">Add New Review</button> --}}
         <a href="/newreview"><button>Add New Review</button></a>
       </div>
     </div>
   </div>
 </div>
-
-{{!-- {{#each reviews as |review|}}
-{{> review-posts}} --}}
-{{!-- {{/each}} --}}
+{{!-- change book to review later --}}
+{{#each book.reviews}}
+{{> review-posts}}
+{{/each}}
 
   </div>
 </div>
-<div class="card mt-3 mx-auto card-custom" style="max-width: 540px;">
+{{!-- <div class="card mt-3 mx-auto card-custom" style="max-width: 540px;">
       <div class="card-body">
         <details>
   <summary class="card-title">Review 1</summary>
@@ -34,7 +33,7 @@
   <p class="card-title text-center">{{book.reviews.[0].content}}</p>
 </details>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
 
