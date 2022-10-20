@@ -6,8 +6,6 @@ const signup = async (event) => {
   const username = document.querySelector('#username').value.trim();
   const password = document.querySelector('#password').value.trim();
 
-console.log(username);
-console.log(password);
     // Make a POST request to destroy the session on the back end
     const response = await fetch('/api/users', {
       method: 'POST',
@@ -16,9 +14,7 @@ console.log(password);
     });
   
     if (response.ok) {
-      // swal("", "New User has been created", "success");
       alert('New user has been created');
-      // If successfully logged out, redirect to the login page
       document.location.replace('/login');
       
     } else {

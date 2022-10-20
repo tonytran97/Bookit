@@ -5,8 +5,6 @@ const User = require('../models/Users');
 const withAuth = require(`../utils/auth`);
 
 router.get('/:id', async (req, res) => {
-  // console.log(req.params.id);
-  console.log(req.session);
   try {
     const bookData = await Book.findByPk(req.params.id, {
       include: [
@@ -27,11 +25,7 @@ router.get('/:id', async (req, res) => {
     });
 
     const book = bookData.get({ plain: true });
-    console.log(book);
-    // console.log(book.reviews);
 
-    // console.log(req.session);
-    // console.log(req.session.loggedIn);
     res.render('reviews', { 
         book,
         loggedIn: req.session.loggedIn, 

@@ -22,12 +22,8 @@ console.log(dbUserData);
 
 // login
 router.post('/login', async (req, res) => {
-  // console.log('test');
-  // console.log(req.body);
-  // console.log(req.body.username);
     try {
       const userData = await User.findOne({ where: { username: req.body.username } });
-      console.log(userData);
       if (!userData) {
         console.log('user error')
         res
@@ -53,7 +49,6 @@ router.post('/login', async (req, res) => {
         req.session.user = req.body.username;
         
         res.json({ user: userData, message: 'You are now logged in!' });
-        console.log(req.session.logged_in);
       });
   
     } catch (err) {

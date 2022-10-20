@@ -4,15 +4,12 @@ const withAuth = require(`../../utils/auth`);
 
 // CREATE new review
 router.post('/', async (req, res) => {
-    console.log(req.body.review);
-    // console.log('request to post review received');
     try {
       const dbReviewData = await Review.create({
         content: req.body.review,
         user_id: req.session.user_id,
         book_id: req.session.book_id,
       });
-  console.log(dbReviewData);
       req.session.save(() => {
         res.status(200).json(dbReviewData);
       });

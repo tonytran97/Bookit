@@ -10,7 +10,6 @@ router.post('/', async (req, res) => {
         cover: req.body.cover,
         summary: req.body.summary,
       });
-  console.log(dbBookData);
       req.session.save(() => {
         res.status(200).json(dbBookData);
       });

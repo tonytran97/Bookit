@@ -6,11 +6,6 @@ const loginFormHandler = async (event) => {
     const cover = document.querySelector('#cover').value.trim();
     const summary = document.querySelector('#summary').value.trim();
   
-  console.log(title);
-  console.log(author);
-  console.log(cover);
-  console.log(summary);
-  
     if (title && author && cover && summary) {
       const response = await fetch('/api/newread', {
         method: 'POST',
