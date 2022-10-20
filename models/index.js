@@ -29,4 +29,6 @@ Review.belongsTo(Book, {
     foreignKey: 'user_id'
 });
 
+// test
+
 module.exports = { User, Review, Book }
