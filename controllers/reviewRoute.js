@@ -5,6 +5,8 @@ const User = require('../models/Users');
 const withAuth = require(`../utils/auth`);
 
 router.get('/:id', async (req, res) => {
+  // console.log(req.params.id);
+  console.log(req.session);
   try {
     const bookData = await Book.findByPk(req.params.id, {
       include: [

@@ -2,9 +2,11 @@ const { Review } = require('../models');
 
 // dummy data
 const reviewData = [
-   {content:'dummy content 1', user_id: 1, book_id: 1},
-   {content:'dummy content 2', user_id: 2, book_id: 2},
-   {content:'dummy content 3', user_id: 3, book_id: 3},
+   {content:'This book smells good', user_id: 1, book_id: 1},
+   {content:'Tastes good, 10/10 recommend', user_id: 1, book_id: 1},
+   {content:'Deep book, I almost drowned', user_id: 1, book_id: 1},
+   {content:'Good book to sharpen your mind, also got a papercut', user_id: 2, book_id: 2},
+   {content:'This book sucks', user_id: 2, book_id: 2},
 ];
 
 

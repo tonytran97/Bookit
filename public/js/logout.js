@@ -6,10 +6,11 @@ const logout = async () => {
   });
 
   if (response.ok) {
-    swal("You have successfully been signed out!", "", "success");
-
     // If successfully logged out, redirect to the login page
     // document.location.replace('/login');
+    swal("You have successfully been logged out!", "Please refresh the page", "success");
+
+    
     
   } else {
     alert(response.statusText);
