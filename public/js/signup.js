@@ -16,10 +16,10 @@ console.log(password);
     });
   
     if (response.ok) {
-      swal("", "New User has been created", "success");
-  
+      // swal("", "New User has been created", "success");
+      alert('New user has been created');
       // If successfully logged out, redirect to the login page
-      // document.location.replace('/login');
+      document.location.replace('/login');
       
     } else {
       alert(response.statusText);
