@@ -42,7 +42,7 @@ Technology used to build the application:
 
 ---
 
-Will insert deployed Heroku App here later
+Live application deployed to Heroku is available [here](https://sleepy-chamber-71078.herokuapp.com/).
 
 ## Future Development
 
